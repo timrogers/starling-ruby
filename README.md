@@ -10,8 +10,7 @@ The Starling Ruby library provides a simple, idiomatic interface to the [Starlin
 Install the gem by adding it to your Gemfile, and then run `bundle`:
 
 ```ruby
-# The gem will be available on RubyGems soon 💎
-gem 'starling-ruby', github: "timrogers/starling-ruby"
+gem 'starling-ruby', '~> 0.1.0'
 ```
 
 You can now initialise the client, providing an access token, an optionally an environment (either `:sandbox` or `:production`, defaulting to :production):
