@@ -61,9 +61,9 @@ puts "Your transaction was for #{transaction.amount} on #{transaction.created}"
 
 ## Tests
 
-The recommended way to run tests on the project is using CircleCI's local Docker testing
-- this is the best way to make sure that what passes tests locally in development will
-work when you push it and it runs through our automated CI.
+The recommended way to run tests on the project is using CircleCI's local Docker
+testing - this is the best way to make sure that what passes tests locally in development
+will work when you push it and it runs through our automated CI.
 
 ```bash
 # Download the circleci binary (assuming /usr/local/bin is in your PATH)
