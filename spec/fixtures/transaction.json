@@ -1,0 +1,15 @@
+{
+  "_links": {
+    "detail": {
+      "href": "api/v1/transactions/mastercard/284ad156-cb66-465c-8757-f6440304a0f8",
+      "templated": false
+    }
+  },
+  "id": "284ad156-cb66-465c-8757-f6440304a0f8",
+  "currency": "GBP",
+  "amount": -1.02,
+  "direction": "OUTBOUND",
+  "created": "2017-05-30T18:06:28.773Z",
+  "narrative": "Aldi",
+  "source": "MASTER_CARD"
+}

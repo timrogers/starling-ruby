@@ -1,0 +1,39 @@
+version: 2
+jobs:
+  build:
+    working_directory: /home/circleci/starling
+    docker:
+      - image: circleci/ruby:2.4.1-node
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: starling-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Store bundle cache
+      - type: cache-save
+        key: starling-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Run RSpec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Run Rubocop
+      - type: shell
+        command: |
+          bundle exec rubocop
+
+      # Save artifacts
+      - type: store_test_results
+        path: /tmp/test-results

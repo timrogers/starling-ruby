@@ -1,0 +1,32 @@
+{
+  "_links": {
+    "card": {
+      "href": "api/v1/cards",
+      "templated": false
+    },
+    "customer": {
+      "href": "api/v1/customers",
+      "templated": false
+    },
+    "mandates": {
+      "href": "/api/v1/direct-debit/mandates",
+      "templated": false
+    },
+    "payees": {
+      "href": "api/v1/contacts",
+      "templated": false
+    },
+    "transactions": {
+      "href": "api/v1/transactions?from={fromDate}&to={toDate}",
+      "templated": true
+    }
+  },
+  "id": "cac60dc8-4448-11e7-a919-92ebcb67fe33",
+  "name": "8d07ea72a-4448-11e7-a919-92ebcb67fe33 GBP",
+  "number": "99999999",
+  "sortCode": "608371",
+  "currency": "GBP",
+  "iban": "GB19SRLG60837199999999",
+  "bic": "SRLGGB2L",
+  "createdAt": "2017-05-17T12:00:00.000Z"
+}

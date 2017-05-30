@@ -1,0 +1,203 @@
+{
+  "_links": {
+    "nextPage": {
+      "href": "NOT_YET_IMPLEMENTED"
+    }
+  },
+  "_embedded": {
+    "transactions": [
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/ed973200-037d-4f55-9c67-1b467a341203",
+            "templated": false
+          }
+        },
+        "id": "ed973200-037d-4f55-9c67-1b467a341203",
+        "currency": "GBP",
+        "amount": -1.02,
+        "direction": "OUTBOUND",
+        "created": "2017-05-30T18:06:28.773Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 32.9
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/8721a769-6c3a-4330-9eeb-bce9d8969ed5",
+            "templated": false
+          }
+        },
+        "id": "8721a769-6c3a-4330-9eeb-bce9d8969ed5",
+        "currency": "GBP",
+        "amount": -3.98,
+        "direction": "OUTBOUND",
+        "created": "2017-05-28T13:05:00.122Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 33.92
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/86f63c0b-37d2-461f-9cae-73d5f53b77c2",
+            "templated": false
+          }
+        },
+        "id": "86f63c0b-37d2-461f-9cae-73d5f53b77c2",
+        "currency": "GBP",
+        "amount": -0.85,
+        "direction": "OUTBOUND",
+        "created": "2017-05-25T10:14:15.240Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 37.9
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/645598a3-e90c-48da-aaff-0d4c14503dce",
+            "templated": false
+          }
+        },
+        "id": "645598a3-e90c-48da-aaff-0d4c14503dce",
+        "currency": "GBP",
+        "amount": -12.74,
+        "direction": "OUTBOUND",
+        "created": "2017-05-22T13:30:35.659Z",
+        "narrative": "PARCEL2GO",
+        "source": "MASTER_CARD",
+        "balance": 38.75
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/2a550cca-172b-4433-903c-b77ea7a3d674",
+            "templated": false
+          }
+        },
+        "id": "2a550cca-172b-4433-903c-b77ea7a3d674",
+        "currency": "GBP",
+        "amount": 1.09,
+        "direction": "INBOUND",
+        "created": "2017-05-22T13:17:36.278Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 51.49
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/4b296462-7159-40f0-9d79-3c81bb52ef47",
+            "templated": false
+          }
+        },
+        "id": "4b296462-7159-40f0-9d79-3c81bb52ef47",
+        "currency": "GBP",
+        "amount": -28.5,
+        "direction": "OUTBOUND",
+        "created": "2017-05-22T13:11:22.336Z",
+        "narrative": "IZ *EMERALD NATURAL NA LONDON",
+        "source": "MASTER_CARD",
+        "balance": 50.4
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/f6a727a5-c147-494d-b24f-81cbae015d1e",
+            "templated": false
+          }
+        },
+        "id": "f6a727a5-c147-494d-b24f-81cbae015d1e",
+        "currency": "GBP",
+        "amount": 50,
+        "direction": "INBOUND",
+        "created": "2017-05-22T12:03:00.211Z",
+        "narrative": "Money received from card ending 4983",
+        "source": "STRIPE_FUNDING",
+        "balance": 78.9
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/d5a0d88b-bd31-4095-a5a4-9a2925413fa9",
+            "templated": false
+          }
+        },
+        "id": "d5a0d88b-bd31-4095-a5a4-9a2925413fa9",
+        "currency": "GBP",
+        "amount": -0.65,
+        "direction": "OUTBOUND",
+        "created": "2017-05-21T15:05:55.457Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 28.9
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/af7d49ea-db0b-467b-a715-a58df30c631a",
+            "templated": false
+          }
+        },
+        "id": "af7d49ea-db0b-467b-a715-a58df30c631a",
+        "currency": "GBP",
+        "amount": -3.93,
+        "direction": "OUTBOUND",
+        "created": "2017-05-21T15:00:54.741Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 29.55
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/mastercard/8ec4ea75-6532-4244-9781-fbd91ef3e88f",
+            "templated": false
+          }
+        },
+        "id": "8ec4ea75-6532-4244-9781-fbd91ef3e88f",
+        "currency": "GBP",
+        "amount": -1.64,
+        "direction": "OUTBOUND",
+        "created": "2017-05-20T19:54:40.943Z",
+        "narrative": "Aldi",
+        "source": "MASTER_CARD",
+        "balance": 33.48
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/fps/out/b7f69386-860f-49b6-9e9d-97b46fefb658",
+            "templated": false
+          }
+        },
+        "id": "b7f69386-860f-49b6-9e9d-97b46fefb658",
+        "currency": "GBP",
+        "amount": -15.9,
+        "direction": "OUTBOUND",
+        "created": "2017-05-19T06:28:05.158Z",
+        "narrative": "2184EMPH000604",
+        "source": "FASTER_PAYMENTS_OUT",
+        "balance": 35.12
+      },
+      {
+        "_links": {
+          "detail": {
+            "href": "api/v1/transactions/fd613d0c-6545-492f-8dac-8cf9534089da",
+            "templated": false
+          }
+        },
+        "id": "fd613d0c-6545-492f-8dac-8cf9534089da",
+        "currency": "GBP",
+        "amount": 50,
+        "direction": "INBOUND",
+        "created": "2017-05-17T10:07:33.743Z",
+        "narrative": "Money received from card ending 4983",
+        "source": "STRIPE_FUNDING",
+        "balance": 51.02
+      }
+    ]
+  }
+}
