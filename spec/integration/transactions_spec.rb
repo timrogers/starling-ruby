@@ -11,7 +11,7 @@ RSpec.describe Starling::Services::TransactionsService do
   end
 
   describe '#list' do
-    subject { service.list }
+    subject(:transactions) { service.list }
 
     let(:status) { 200 }
     let(:body) { load_fixture('transactions.json') }
@@ -34,16 +34,14 @@ RSpec.describe Starling::Services::TransactionsService do
 
       its(:length) { is_expected.to eq(12) }
 
-      describe '#first' do
-        subject(:transaction) { service.list.first }
-
-        its(:created) { is_expected.to eq(Time.parse('2017-05-30T18:06:28.773Z')) }
-        its(:id) { is_expected.to eq('ed973200-037d-4f55-9c67-1b467a341203') }
-        its(:currency) { is_expected.to eq('GBP') }
-        its(:amount) { is_expected.to eq(-1.02) }
-        its(:direction) { is_expected.to eq(:outbound) }
-        its(:narrative) { is_expected.to eq('Aldi') }
-        its(:source) { is_expected.to eq(:master_card) }
+      it 'correctly constructs Transaction resources', :aggregate_failures do
+        expect(transactions.first.created).to eq(Time.parse('2017-05-30T18:06:28.773Z'))
+        expect(transactions.first.id).to eq('ed973200-037d-4f55-9c67-1b467a341203')
+        expect(transactions.first.currency).to eq('GBP')
+        expect(transactions.first.amount).to eq(-1.02)
+        expect(transactions.first.direction).to eq(:outbound)
+        expect(transactions.first.narrative).to eq('Aldi')
+        expect(transactions.first.source).to eq(:master_card)
       end
     end
 
@@ -71,7 +69,7 @@ RSpec.describe Starling::Services::TransactionsService do
   end
 
   describe '#get' do
-    subject { service.get(id) }
+    subject(:transaction) { service.get(id) }
 
     let(:id) { '284ad156-cb66-465c-8757-f6440304a0f8' }
 
@@ -96,13 +94,15 @@ RSpec.describe Starling::Services::TransactionsService do
 
       it { is_expected.to be_a(Starling::Resources::TransactionResource) }
 
-      its(:created) { is_expected.to eq(Time.parse('2017-05-30T18:06:28.773Z')) }
-      its(:id) { is_expected.to eq('284ad156-cb66-465c-8757-f6440304a0f8') }
-      its(:currency) { is_expected.to eq('GBP') }
-      its(:amount) { is_expected.to eq(-1.02) }
-      its(:direction) { is_expected.to eq(:outbound) }
-      its(:narrative) { is_expected.to eq('Aldi') }
-      its(:source) { is_expected.to eq(:master_card) }
+      it 'correctly constructs a Transaction resource', :aggregate_failures do
+        expect(transaction.created).to eq(Time.parse('2017-05-30T18:06:28.773Z'))
+        expect(transaction.id).to eq('284ad156-cb66-465c-8757-f6440304a0f8')
+        expect(transaction.currency).to eq('GBP')
+        expect(transaction.amount).to eq(-1.02)
+        expect(transaction.direction).to eq(:outbound)
+        expect(transaction.narrative).to eq('Aldi')
+        expect(transaction.source).to eq(:master_card)
+      end
     end
 
     context 'with a non-existent ID' do

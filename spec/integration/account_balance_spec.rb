@@ -11,7 +11,7 @@ RSpec.describe Starling::Services::AccountBalanceService do
   end
 
   describe '#get' do
-    subject { service.get }
+    subject(:account_balance) { service.get }
 
     let(:fixture) { load_fixture('account_balance.json') }
 
@@ -31,12 +31,14 @@ RSpec.describe Starling::Services::AccountBalanceService do
 
     it { is_expected.to be_a(Starling::Resources::AccountBalanceResource) }
 
-    its(:accepted_overdraft) { is_expected.to eq(12.34) }
-    its(:amount) { is_expected.to eq(12.34) }
-    its(:currency) { is_expected.to eq('GBP') }
-    its(:pending_transactions) { is_expected.to eq(12.34) }
-    its(:cleared_balance) { is_expected.to eq(12.34) }
-    its(:effective_balance) { is_expected.to eq(12.34) }
-    its(:available_to_spend) { is_expected.to eq(12.34) }
+    it 'correctly constructs an AccountBalance resource', :aggregate_failures do
+      expect(account_balance.accepted_overdraft).to eq(12.34)
+      expect(account_balance.amount).to eq(12.34)
+      expect(account_balance.currency).to eq('GBP')
+      expect(account_balance.pending_transactions).to eq(12.34)
+      expect(account_balance.cleared_balance).to eq(12.34)
+      expect(account_balance.effective_balance).to eq(12.34)
+      expect(account_balance.available_to_spend).to eq(12.34)
+    end
   end
 end

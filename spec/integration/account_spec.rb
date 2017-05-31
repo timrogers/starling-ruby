@@ -15,7 +15,7 @@ RSpec.describe Starling::Services::AccountService do
   end
 
   describe '#get' do
-    subject { service.get }
+    subject(:account) { service.get }
 
     let(:fixture) { load_fixture('account.json') }
 
@@ -35,13 +35,15 @@ RSpec.describe Starling::Services::AccountService do
 
     it { is_expected.to be_a(Starling::Resources::AccountResource) }
 
-    its(:created_at) { is_expected.to eq(Time.parse('2017-05-17T12:00:00.000Z')) }
-    its(:currency) { is_expected.to eq('GBP') }
-    its(:iban) { is_expected.to eq('GB19SRLG60837199999999') }
-    its(:number) { is_expected.to eq('99999999') }
-    its(:sort_code) { is_expected.to eq('608371') }
-    its(:bic) { is_expected.to eq('SRLGGB2L') }
-    its(:id) { is_expected.to eq('cac60dc8-4448-11e7-a919-92ebcb67fe33') }
-    its(:name) { is_expected.to eq('8d07ea72a-4448-11e7-a919-92ebcb67fe33 GBP') }
+    it 'correctly constructs an Account resource', :aggregate_failures do
+      expect(account.created_at).to eq(Time.parse('2017-05-17T12:00:00.000Z'))
+      expect(account.currency).to eq('GBP')
+      expect(account.iban).to eq('GB19SRLG60837199999999')
+      expect(account.number).to eq('99999999')
+      expect(account.sort_code).to eq('608371')
+      expect(account.bic).to eq('SRLGGB2L')
+      expect(account.id).to eq('cac60dc8-4448-11e7-a919-92ebcb67fe33')
+      expect(account.name).to eq('8d07ea72a-4448-11e7-a919-92ebcb67fe33 GBP')
+    end
   end
 end
