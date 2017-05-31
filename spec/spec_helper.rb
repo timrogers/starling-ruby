@@ -5,6 +5,8 @@ require 'pry'
 require 'values'
 require 'starling'
 
+require 'support/integration_tests'
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'
@@ -17,6 +19,8 @@ RSpec.configure do |config|
   config.order = :rand
   # config.mock_with(:rspec) { |mocks| mocks.verify_partial_doubles = true }
   config.raise_errors_for_deprecations!
+
+  config.include IntegrationTests
 end
 
 def load_fixture(*path)
