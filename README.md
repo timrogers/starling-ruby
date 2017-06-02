@@ -59,6 +59,25 @@ transaction = starling.transactions.get("insert-uuid-here")
 puts "Your transaction was for #{transaction.amount} on #{transaction.created}"
 ```
 
+### Fetch a merchant by ID
+
+```ruby
+merchant = starling.merchants.get("insert-uuid-here")
+puts "You can call #{merchant.name} on #{merchant.phone_number}"
+```
+
+## Backwards compatability
+
+This gem is versioned using [Semantic Versioning](http://semver.org/), so you can be
+confident when updating that there will not be breaking changes outside of a major
+version (following format MAJOR.MINOR.PATCH, so for instance moving from 2.3.0 to 3.0.0
+would be allowed to include incompatible API changes). See
+[CHANGELOG.md](https://github.com/timrogers/starling-ruby/tree/master/CHANGELOG.md) for
+details on what has changed in each version.
+
+Until we reach v1.0, minor versions may contain backwards-incompatible changes, as the
+API stabilises. Any such changes will be flagged in the changelog.
+
 ## Tests
 
 The recommended way to run tests on the project is using CircleCI's local Docker

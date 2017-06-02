@@ -28,6 +28,10 @@ module Starling
       Services::TransactionsService.new(@api_service)
     end
 
+    def merchants
+      Services::MerchantsService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

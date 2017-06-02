@@ -13,6 +13,7 @@ RSpec.describe Starling::Client do
   end
 
   its(:transactions) { is_expected.to be_a(Starling::Services::TransactionsService) }
+  its(:merchants) { is_expected.to be_a(Starling::Services::MerchantsService) }
 
   it 'instantiates an ApiService, defaulting to production' do
     expect(Starling::ApiService).to receive(:new)

@@ -9,10 +9,12 @@ require 'starling/services/base_service'
 require 'starling/services/account_service'
 require 'starling/services/account_balance_service'
 require 'starling/services/transactions_service'
+require 'starling/services/merchants_service'
 require 'starling/resources/base_resource'
 require 'starling/resources/account_resource'
 require 'starling/resources/account_balance_resource'
 require 'starling/resources/transaction_resource'
+require 'starling/resources/merchant_resource'
 
 module Starling
 end
