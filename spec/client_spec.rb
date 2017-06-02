@@ -28,6 +28,12 @@ RSpec.describe Starling::Client do
     is_expected.to be_a(Starling::Services::DirectDebitMandatesService)
   end
 
+  its(:contacts) { is_expected.to be_a(Starling::Services::ContactsService) }
+
+  its(:contact_accounts) do
+    is_expected.to be_a(Starling::Services::ContactAccountsService)
+  end
+
   it 'instantiates an ApiService, defaulting to production' do
     expect(Starling::ApiService).to receive(:new)
       .with('https://api.starlingbank.com', options)

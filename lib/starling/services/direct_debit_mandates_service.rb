@@ -16,7 +16,7 @@ module Starling
 
       def list(options = {})
         response = @api_service.make_request(:get, '/direct-debit/mandates', options)
-        build_collection(response, key: 'mandates', resource: resource)
+        build_collection_from_embedded_key(response, key: 'mandates', resource: resource)
       end
 
       private

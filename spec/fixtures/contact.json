@@ -1,0 +1,18 @@
+{
+  "_links": {
+    "accounts": {
+      "href": "api/v1/contacts/ae46414c-7cc4-44f6-8be3-d6a2296f5700/accounts",
+      "templated": false
+    },
+    "photo": {
+      "href": "api/v1/contacts/ae46414c-7cc4-44f6-8be3-d6a2296f5700/photo",
+      "templated": false
+    },
+    "self": {
+      "href": "api/v1/contacts/ae46414c-7cc4-44f6-8be3-d6a2296f5700",
+      "templated": false
+    }
+  },
+  "id": "ae46414c-7cc4-44f6-8be3-d6a2296f5700",
+  "name": "Alice Saunders"
+}

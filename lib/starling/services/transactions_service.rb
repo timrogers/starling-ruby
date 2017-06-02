@@ -8,7 +8,10 @@ module Starling
 
       def list(options = {})
         response = @api_service.make_request(:get, '/transactions', options)
-        build_collection(response, key: 'transactions', resource: resource)
+
+        build_collection_from_embedded_key(response,
+                                           key: 'transactions',
+                                           resource: resource)
       end
 
       private
