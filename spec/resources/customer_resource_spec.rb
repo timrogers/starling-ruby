@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Starling::Resources::CustomerResource do
-  subject(:error) { described_class.new(response: response) }
+  subject(:customer) { described_class.new(response: response) }
   let(:fixture) { load_fixture('customer.json') }
   let(:response) { double(body: fixture, status: 200, headers: {}) }
 

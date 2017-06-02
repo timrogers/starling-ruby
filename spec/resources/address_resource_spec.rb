@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'json'
 
 RSpec.describe Starling::Resources::AddressResource do
-  subject(:error) { described_class.new(parsed_data: address) }
+  subject(:address_resource) { described_class.new(parsed_data: address) }
   let(:fixture) { load_fixture('addresses.json') }
   let(:parsed_data) { JSON.parse(fixture) }
   let(:address) { parsed_data['current'] }

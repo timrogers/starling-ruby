@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Starling::Resources::MerchantLocationResource do
-  subject(:error) { described_class.new(response: response) }
+  subject(:merchant_location) { described_class.new(response: response) }
   let(:fixture) { load_fixture('merchant_location.json') }
   let(:response) { double(body: fixture, status: 200, headers: {}) }
 

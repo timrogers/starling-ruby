@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Starling::Resources::CardResource do
-  subject(:error) { described_class.new(response: response) }
+  subject(:card) { described_class.new(response: response) }
   let(:fixture) { load_fixture('card.json') }
   let(:response) { double(body: fixture, status: 200, headers: {}) }
 
