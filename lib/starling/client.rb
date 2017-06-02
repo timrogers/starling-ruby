@@ -52,6 +52,10 @@ module Starling
       Services::AddressesService.new(@api_service)
     end
 
+    def direct_debit_mandates
+      Services::DirectDebitMandatesService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

@@ -4,7 +4,7 @@ module Starling
       ERROR_STATUSES = 400..599
 
       def on_complete(env)
-        return unless !json?(env) || ERROR_STATUSES.include?(env.status)
+        return unless !json?(env) && ERROR_STATUSES.include?(env.status)
         raise Errors::ApiError, env
       end
 

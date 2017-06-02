@@ -1,0 +1,30 @@
+{
+  "_links": {
+    "self": {
+      "href": "/api/v1/direct-debit/mandates",
+      "templated": false
+    }
+  },
+  "_embedded": {
+    "mandates": [
+      {
+        "uid": "3d69de66-82db-43d1-88a5-c8df24074695",
+        "reference": "Y8BMVK7",
+        "status": "LIVE",
+        "source": "ELECTRONIC",
+        "created": "2017-05-31T08:07:54.618Z",
+        "originatorName": "GC re Tim Rogers",
+        "originatorUid": "4604224f-c81d-4c34-908b-b9f57fc60d51"
+      },
+      {
+        "uid": "3330e266-e6e5-4f06-ae9d-6db28356b01e",
+        "reference": "MC007717",
+        "status": "LIVE",
+        "source": "PAPER",
+        "created": "2017-05-27T00:00:09.264Z",
+        "originatorName": " THE DESIGN MUSEUM ",
+        "originatorUid": "6f54de28-c06f-451b-829a-582d5c3da2b6"
+      }
+    ]
+  }
+}

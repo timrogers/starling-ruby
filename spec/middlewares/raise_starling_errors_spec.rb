@@ -24,7 +24,7 @@ RSpec.describe Starling::Middlewares::RaiseStarlingErrors do
     context 'which was apparently successful' do
       let(:status) { 200 }
 
-      it { is_expected.to raise_error(Starling::Errors::ApiError) }
+      it { is_expected.to_not raise_error }
     end
 
     context 'which responded with an error code' do
