@@ -1,0 +1,11 @@
+{
+  "merchantUid": "4cac93d3-f92a-440d-b4f9-fd5bac8368ba",
+  "merchant": {
+    "href": "/api/v1/merchants/4cac93d3-f92a-440d-b4f9-fd5bac8368ba",
+    "templated": false
+  },
+  "merchantLocationUid": "10f83832-170f-452a-8b2d-d864de381b37",
+  "merchantName": "Aldi",
+  "locationName": "ALDI",
+  "mastercardMerchantCategoryCode": 5411
+}

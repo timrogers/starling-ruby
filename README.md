@@ -66,6 +66,17 @@ merchant = starling.merchants.get("insert-uuid-here")
 puts "You can call #{merchant.name} on #{merchant.phone_number}"
 ```
 
+### Fetch a merchant location by ID
+
+```ruby
+merchant_location = starling.merchant_locations.get(
+  "insert-merchant-uid-here",
+  "insert-merchant-location-uid-here"
+)
+
+puts "This location for #{merchant_location.merchant_name} is called #{merchant_location.location_name}"
+```
+
 ## Backwards compatability
 
 This gem is versioned using [Semantic Versioning](http://semver.org/), so you can be

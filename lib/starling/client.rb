@@ -32,6 +32,26 @@ module Starling
       Services::MerchantsService.new(@api_service)
     end
 
+    def merchant_locations
+      Services::MerchantLocationsService.new(@api_service)
+    end
+
+    def card
+      Services::CardService.new(@api_service)
+    end
+
+    def me
+      Services::MeService.new(@api_service)
+    end
+
+    def customer
+      Services::CustomerService.new(@api_service)
+    end
+
+    def addresses
+      Services::AddressesService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

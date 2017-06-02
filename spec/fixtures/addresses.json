@@ -1,0 +1,16 @@
+{
+  "current": {
+    "streetAddress": "Flat 006",
+    "city": "LONDON",
+    "country": "GBR",
+    "postcode": "SE14 5FA"
+  },
+  "previous": [
+    {
+      "streetAddress": "Flat 15",
+      "city": "LONDON",
+      "country": "GBR",
+      "postcode": "SE1 7RD"
+    }
+  ]
+}

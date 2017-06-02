@@ -1,0 +1,30 @@
+{
+  "_links": {
+    "accounts": {
+      "href": "api/v1/accounts",
+      "templated": false
+    },
+    "addresses": {
+      "href": "api/v1/addresses",
+      "templated": false
+    },
+    "contacts": {
+      "href": "api/v1/contacts",
+      "templated": false
+    },
+    "self": {
+      "href": "api/v1/customers",
+      "templated": false
+    },
+    "transactions": {
+      "href": "api/v1/transactions?from={fromDate}&to={toDate}",
+      "templated": false
+    }
+  },
+  "customerUid": "88c4d569-01cc-4217-9bc0-0387b6f7f65d",
+  "firstName": "Timothy David",
+  "lastName": "Rogers",
+  "dateOfBirth": "1984-12-25",
+  "email": "me@timrogers.co.uk",
+  "phone": "+447969999999"
+}

@@ -1,0 +1,16 @@
+{
+  "_links": {
+    "transactions": {
+      "href": "/api/v1/transactions/mastercard?from={fromDate}&to={toDate}",
+      "templated": true
+    }
+  },
+  "id": "2125b5ce-5651-4ebe-9ef9-50b1703508bb",
+  "nameOnCard": "Timothy David Rogers",
+  "type": "ContactlessDebitMastercard",
+  "enabled": true,
+  "cancelled": false,
+  "activationRequested": true,
+  "activated": true,
+  "dispatchDate": "2017-05-19"
+}

@@ -15,6 +15,15 @@ RSpec.describe Starling::Client do
   its(:transactions) { is_expected.to be_a(Starling::Services::TransactionsService) }
   its(:merchants) { is_expected.to be_a(Starling::Services::MerchantsService) }
 
+  its(:merchant_locations) do
+    is_expected.to be_a(Starling::Services::MerchantLocationsService)
+  end
+
+  its(:card) { is_expected.to be_a(Starling::Services::CardService) }
+  its(:me) { is_expected.to be_a(Starling::Services::MeService) }
+  its(:customer) { is_expected.to be_a(Starling::Services::CustomerService) }
+  its(:addresses) { is_expected.to be_a(Starling::Services::AddressesService) }
+
   it 'instantiates an ApiService, defaulting to production' do
     expect(Starling::ApiService).to receive(:new)
       .with('https://api.starlingbank.com', options)

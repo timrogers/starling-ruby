@@ -1,5 +1,6 @@
 require 'json'
 require 'time'
+require 'date'
 
 module Starling
   module Resources
@@ -20,6 +21,10 @@ module Starling
 
       def present_datetime(iso8601_string)
         Time.parse(iso8601_string)
+      end
+
+      def present_date(string)
+        Date.parse(string)
       end
 
       # Some strings returned by the API are specified as Enum types, with a specified
