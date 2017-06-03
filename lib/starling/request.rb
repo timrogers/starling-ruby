@@ -1,13 +1,14 @@
 module Starling
+  # :reek:TooManyInstanceVariables
   class Request
     def initialize(connection, method, path, options)
       @connection = connection
       @method = method
       @path = path
       @headers = options.delete(:headers) || {}
-      @options = options
-      @request_body = request_body
-      @request_query = request_query
+      params = options.fetch(:params, {})
+      @request_body = params if %i[post put delete].include?(method)
+      @request_query = method == :get ? params : {}
 
       return unless @request_body.is_a?(Hash)
       @request_body = @request_body.to_json
@@ -21,20 +22,6 @@ module Starling
         request.params = @request_query
         request.headers.merge!(@headers)
       end
-    end
-
-    private
-
-    def request_body
-      return @options.fetch(:params, {}) if %i[post put delete].include?(@method)
-
-      nil
-    end
-
-    def request_query
-      return @options.fetch(:params, {}) if @method == :get
-
-      {}
     end
   end
 end

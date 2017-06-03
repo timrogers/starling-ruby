@@ -8,7 +8,7 @@ module Starling
       # A resource can be instantiated with either a Faraday::Response, including a
       # #body, or with a Hash pre-parsed from JSON
       def initialize(response: nil, parsed_data: nil)
-        if response.nil? && parsed_data.nil?
+        unless response || parsed_data
           raise ArgumentError, 'Either response or parsed_data must be provided to ' \
                                'instantiate a resource'
         end

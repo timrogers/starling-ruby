@@ -1,4 +1,5 @@
 require 'starling/version'
+require 'starling/utils'
 require 'starling/client'
 require 'starling/api_service'
 require 'starling/request'

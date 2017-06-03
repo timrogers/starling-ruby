@@ -9,6 +9,8 @@ module Starling
 
       private
 
+      attr_reader :api_service
+
       def build_collection_from_key(response, key:, resource:)
         JSON.parse(response.body)
             .fetch(key)

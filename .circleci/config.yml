@@ -11,6 +11,9 @@ jobs:
       - type: cache-restore
         key: starling-{{ checksum "Gemfile.lock" }}
 
+      # Update bundler
+      - run: gem install bundler
+
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle
 
@@ -33,6 +36,11 @@ jobs:
       - type: shell
         command: |
           bundle exec rubocop
+
+      # Run Reek
+      - type: shell
+        command: |
+          bundle exec reek lib
 
       # Save artifacts
       - type: store_test_results

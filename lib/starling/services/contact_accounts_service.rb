@@ -2,7 +2,7 @@ module Starling
   module Services
     class ContactAccountsService < BaseService
       def get(contact_id, account_id, options = {})
-        response = @api_service.make_request(
+        response = api_service.make_request(
           :get,
           "/contacts/#{contact_id}/accounts/#{account_id}",
           options
@@ -12,7 +12,7 @@ module Starling
       end
 
       def list(contact_id, options = {})
-        response = @api_service.make_request(
+        response = api_service.make_request(
           :get,
           "/contacts/#{contact_id}/accounts",
           options

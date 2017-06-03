@@ -32,7 +32,7 @@ module Starling
       end
 
       def parsed_body
-        return if body.nil?
+        return unless body
         JSON.parse(body)
       rescue JSON::ParserError
         nil
@@ -41,7 +41,7 @@ module Starling
       private
 
       def json?
-        !parsed_body.nil?
+        parsed_body
       end
     end
   end

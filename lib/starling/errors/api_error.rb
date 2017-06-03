@@ -5,7 +5,7 @@ module Starling
     class ApiError < BaseError
       def message
         return super unless json?
-        return super if error.nil? || error_description.nil?
+        return super unless error && error_description
 
         "#{status}: #{error_description} (#{error})"
       end

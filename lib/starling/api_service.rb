@@ -22,8 +22,7 @@ module Starling
 
     def make_request(method, path, options = {})
       raise ArgumentError, 'options must be a hash' unless options.is_a?(Hash)
-      options[:headers] ||= {}
-      options[:headers] = @headers.merge(options[:headers])
+      options[:headers] = @headers.merge(options.fetch(:headers, {}))
 
       Request.new(@connection, method, build_path(path), options)
              .make_request
@@ -47,32 +46,14 @@ module Starling
       @user_agent ||=
         begin
           comment = [
-            "#{ruby_engine}/#{ruby_version}",
-            "#{RUBY_ENGINE}/#{interpreter_version}",
+            "#{Utils.ruby_engine}/#{Utils.ruby_version}",
+            "#{RUBY_ENGINE}/#{Utils.interpreter_version}",
             RUBY_PLATFORM.to_s,
             "faraday/#{Faraday::VERSION}"
           ]
 
-          "#{gem_info} #{comment.join(' ')}"
+          "#{Utils.gem_info} #{comment.join(' ')}"
         end
-    end
-
-    def gem_info
-      return 'starling-ruby' unless defined?(Starling::VERSION)
-      "starling-ruby/v#{Starling::VERSION}"
-    end
-
-    def ruby_engine
-      defined?(RUBY_ENGINE) ? RUBY_ENGINE : 'ruby'
-    end
-
-    def ruby_version
-      return RUBY_VERSION unless defined?(RUBY_PATCHLEVEL)
-      RUBY_VERSION + "p#{RUBY_PATCHLEVEL}"
-    end
-
-    def interpreter_version
-      defined?(JRUBY_VERSION) ? JRUBY_VERSION : RUBY_VERSION
     end
   end
 end

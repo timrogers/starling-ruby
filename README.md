@@ -13,7 +13,8 @@ Install the gem by adding it to your Gemfile, and then run `bundle`:
 gem 'starling-ruby', '~> 0.1.0'
 ```
 
-You can now initialise the client, providing an access token, an optionally an environment (either `:sandbox` or `:production`, defaulting to :production):
+You can now initialise the client, providing an access token, an optionally an
+environment (either `:sandbox` or `:production`, defaulting to :production):
 
 ```ruby
 starling = Starling::Client.new(
@@ -42,14 +43,16 @@ puts "Your balance is #{balance.amount} #{balance.currency}!"
 
 ```ruby
 account = starling.account.get
-puts "Your sort code is #{account.sort_code} and your account number is #{account.number}."
+puts "Your sort code is #{account.sort_code} and your account number is " \
+     "#{account.number}."
 ```
 
 ### List transactions
 
 ```ruby
 transaction = starling.transactions.list.first
-puts "Your most recent transaction was for #{transaction.amount} on #{transaction.created}"
+puts "Your most recent transaction was for #{transaction.amount} on " \
+     "#{transaction.created}"
 ```
 
 ### Fetch a transaction by ID
@@ -74,7 +77,8 @@ merchant_location = starling.merchant_locations.get(
   "insert-merchant-location-uid-here"
 )
 
-puts "This location for #{merchant_location.merchant_name} is called #{merchant_location.location_name}"
+puts "This location for #{merchant_location.merchant_name} is called " \
+     "#{merchant_location.location_name}"
 ```
 
 ## Backwards compatability
@@ -97,14 +101,19 @@ will work when you push it and it runs through our automated CI.
 
 ```bash
 # Download the circleci binary (assuming /usr/local/bin is in your PATH)
-curl -o /usr/local/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod +x /usr/local/bin/circleci
+curl -o /usr/local/bin/circleci \
+https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci
 
-# Run the full CI process, including tests and Rubocop. You'll need Docker installed.
+chmod +x /usr/local/bin/circleci
+
+# Run the full CI process, including tests, Rubocop and Reek. You'll need Docker
+# installed.
 circleci build
 ```
 
-You can also run tests in your own environment by running `bundle exec rake`, and can
-run Rubocop by running `bundle exec rubocop`.
+You can also run tests in your own environment by running `bundle exec rake`, can
+run Rubocop by running `bundle exec rubocop` and can run Reek by running `bundle exec
+reek lib`.
 
 ## Contributing
 

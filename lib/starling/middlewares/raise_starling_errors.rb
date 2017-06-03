@@ -11,10 +11,8 @@ module Starling
       private
 
       def json?(env)
-        content_type = env.response_headers['Content-Type'] ||
-                       env.response_headers['content-type'] || ''
-
-        content_type.include?('application/json')
+        env.response_headers.fetch('Content-Type', '')
+           .include?('application/json')
       end
     end
   end
