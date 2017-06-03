@@ -22,10 +22,12 @@ module Starling
         end
 
         @response = response
-        @parsed_data = parsed_data
+        @parsed_data = parsed_data || JSON.parse(response.body)
       end
 
       private
+
+      attr_reader :parsed_data
 
       def present_datetime(iso8601_string)
         Time.parse(iso8601_string)
@@ -41,10 +43,6 @@ module Starling
       # :master_card.
       def symbolize_enum_string(enum_string)
         enum_string.downcase.to_sym
-      end
-
-      def parsed_data
-        @parsed_data ||= JSON.parse(@response.body)
       end
     end
   end

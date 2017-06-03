@@ -15,3 +15,8 @@ LongParameterList:
 
 DataClump:
   min_clump_size: 4
+
+ControlParameter:
+  exclude:
+    # This looks like a false positive to me! `parsed_data` doesn't control the method.
+    - "Starling::Resources::BaseResource#initialize"
