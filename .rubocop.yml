@@ -3,10 +3,12 @@ AllCops:
 
 Metrics/LineLength:
   Max: 90
-
-Style/Documentation:
-  Enabled: false
+  Exclude:
+    # We have a very long line in this file in our YARD documentation comments to link to
+    # a PDF on the MasterCard website. This can't be broken into separate lines, and
+    # adding a rubocop:disable comment appears in the docs, so let's disable it here.
+    - lib/starling/resources/merchant_location_resource.rb
 
 Metrics/BlockLength:
   Exclude:
-  - spec/**/*
+    - spec/**/*

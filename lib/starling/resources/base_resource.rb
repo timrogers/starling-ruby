@@ -4,6 +4,8 @@ require 'date'
 
 module Starling
   module Resources
+    # Abasic implementation of a resource representing a response from the Starling Bank
+    # API
     class BaseResource
       # A resource can be instantiated with either a Faraday::Response (including a
       # #body), or with a Hash pre-parsed from JSON
