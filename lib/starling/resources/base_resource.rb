@@ -5,8 +5,14 @@ require 'date'
 module Starling
   module Resources
     class BaseResource
-      # A resource can be instantiated with either a Faraday::Response, including a
-      # #body, or with a Hash pre-parsed from JSON
+      # A resource can be instantiated with either a Faraday::Response (including a
+      # #body), or with a Hash pre-parsed from JSON
+      #
+      # @param response [Faraday::Response] The complete HTTP response, returned by
+      #                                     {Request#make_request}
+      # @param parsed_data [Hash] The pre-parsed data for the resource, useful for
+      #                           building resources from list resources we've already
+      #                           parsed
       def initialize(response: nil, parsed_data: nil)
         unless response || parsed_data
           raise ArgumentError, 'Either response or parsed_data must be provided to ' \

@@ -3,3 +3,11 @@ UtilityFunction:
 
 IrresponsibleModule:
   enabled: false
+
+TooManyInstanceVariables:
+  exclude:
+    - "Starling::Request"
+
+LongParameterList:
+  exclude:
+    - "Starling::ApiService#make_request"
