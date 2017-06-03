@@ -1,6 +1,6 @@
 module Starling
   module Services
-    # A service for accessing the Merchant Locations API
+    # A service for accessing the Merchant API's Get Location endpoint
     class MerchantLocationsService < BaseService
       # @param merchant_id [String] The Starling internal ID of the merchant the merchant
       #                             location belongs to

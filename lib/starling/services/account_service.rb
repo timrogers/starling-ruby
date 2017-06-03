@@ -1,6 +1,6 @@
 module Starling
   module Services
-    # A service for accessing the Account API
+    # A service for accessing the Account API's Get Account endpoint
     class AccountService < BaseService
       # @param params [Hash] Parameters which will be included in the HTTP request,
       #                      included in the URL as a query string

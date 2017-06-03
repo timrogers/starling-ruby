@@ -1,6 +1,7 @@
 module Starling
   module Services
-    # A service for accessing the Contact Accounts API
+    # A service for accessing the Contact API's Get Contact Accounts and Get Contact
+    # endpoints
     class ContactAccountsService < BaseService
       # @param contact_id [String] The Starling internal ID of the contact the contact
       #                            account belongs to

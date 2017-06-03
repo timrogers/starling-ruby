@@ -1,6 +1,6 @@
 module Starling
   module Services
-    # A service for accessing the Merchants API
+    # A service for accessing the Merchant API's Get Merchant endpoint
     class MerchantsService < BaseService
       # @param params [Hash] Parameters which will be included in the HTTP request,
       #                      included in the URL as a query string

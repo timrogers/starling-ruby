@@ -1,6 +1,7 @@
 module Starling
   module Services
-    # A service for accessing the Contacts API
+    # A service for accessing the Contact's API's Get Contacts, Get Contact, Delete
+    # Contact and Create Contact and Account endpoints
     class ContactsService < BaseService
       # @param id [String] The Starling internal ID of the contact
       # @param params [Hash] Parameters which will be included in the HTTP request,

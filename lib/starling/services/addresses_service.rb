@@ -1,6 +1,6 @@
 module Starling
   module Services
-    # A service for accessing the Addresses API
+    # A service for accessing the Address API
     class AddressesService < BaseService
       # @param params [Hash] Parameters which will be included in the HTTP request,
       #                      included in the URL as a query string
