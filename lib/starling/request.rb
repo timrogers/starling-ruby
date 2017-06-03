@@ -1,4 +1,6 @@
 module Starling
+  # The interface between Starling and Faraday, which is used under the hood to make
+  # HTTP requests
   class Request
     # @param connection [Faraday] A Faraday connection
     # @param method [Symbol] The HTTP method for the request

@@ -34,5 +34,6 @@ require 'starling/resources/transaction_resource'
 require 'starling/resources/merchant_resource'
 require 'starling/resources/merchant_location_resource'
 
+# A Ruby client for accessing the Starling Bank API
 module Starling
 end

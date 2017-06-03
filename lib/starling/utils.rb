@@ -1,4 +1,5 @@
 module Starling
+  # A collection of utility methods used across starling-ruby
   class Utils
     class << self
       # @return [String] The gem's name and version

@@ -9,5 +9,9 @@ TooManyInstanceVariables:
     - "Starling::Request"
 
 LongParameterList:
+  max_params: 4
   exclude:
     - "Starling::ApiService#make_request"
+
+DataClump:
+  min_clump_size: 4

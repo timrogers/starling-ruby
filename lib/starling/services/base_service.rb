@@ -2,7 +2,10 @@ require 'json'
 
 module Starling
   module Services
+    # A basic implementation of a service for interacting with the
+    # Starling Bank API, mapping HTTP request to endpoints to Ruby methods
     class BaseService
+      # @param api_service [ApiService]
       def initialize(api_service)
         @api_service = api_service
       end
