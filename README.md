@@ -26,11 +26,10 @@ starling = Starling::Client.new(
 
 ## Usage
 
-Once you've initialised a `Starling::Client`, it exposes a number of services (living
-in `lib/starling/services`) which have methods calling out to the API, and returning
-resources (found in `lib/starling/resources`).
-
-Much of the API has not yet been implemented. Stay tuned for further updates ❤️
+Now you've initialised a `Starling::Client` with your access token, you can start making
+request to the API. See below for a few simple examples, or head to our
+[full documentation](http://www.rubydoc.info/github/timrogers/starling-ruby/master) for
+complete details:
 
 ### Check your balance
 
@@ -80,6 +79,37 @@ merchant_location = starling.merchant_locations.get(
 puts "This location for #{merchant_location.merchant_name} is called " \
      "#{merchant_location.location_name}"
 ```
+
+## Philosophy
+
+Once you've initialised a `Starling::Client`, it exposes a number of services (living
+in `lib/starling/services`) which have methods calling out to the API. 
+
+Philosophically, these services represent "kinds of things" (i.e. resources) returned by 
+or manipulated by the API. __These do not necessarily match up with the APIs listed in
+Starling's [documentation](https://developer.starlingbank.com/docs), which is grouped slightly differently__. 
+
+The benefit is that we can have a small, predictable set of methods in our
+services exposing API endpoints: `#get`, `#list`, `#create` and `#delete`. 
+
+This is best shown through an example - let's look at the Merchant API. It has two
+endpoints listed under it: "Get Merchant" and "Get Location". The former operates on
+a "kind of thing" called a "contact", and the latter operates on a "kind of thing" called
+a "contact account". You could potentially group these together, but then you'd have to
+have a slightly odd method name (something like `get_location`). Instead, we keep things
+consistent, like follows:
+
+```ruby
+starling.merchants.get(merchant_id)
+starling.merchant_locations.get(merchant_id, merchant_location_id)
+```
+
+Other parts of the Starling Bank API exhibit similar difficulties - for example, the
+Contact API operates on Contacts, Contact Accounts and Contact Photos.
+
+Methods on the services for accessing the API return resources (found in
+`lib/starling/resources`), arrays of resources or, rarely, `Faraday::Response`s in the
+case of `DELETE` requests.
 
 ## Backwards compatability
 
