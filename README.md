@@ -27,7 +27,12 @@ starling = Starling::Client.new(
 ## Usage
 
 Now you've initialised a `Starling::Client` with your access token, you can start making
-request to the API. See below for a few simple examples, or head to our
+requests to the API. 
+
+All APIs are supported except "Get Photo" under the Contact API (it doesn't seem to
+actually be possible to set a photo...) and the Payment APIs for creating an immediate or scheduled payment (which are not supported for personal access tokens).
+
+See below for a few simple examples, or head to our
 [full documentation](http://www.rubydoc.info/github/timrogers/starling-ruby/master) for
 complete details:
 
