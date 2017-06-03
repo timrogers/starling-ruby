@@ -118,7 +118,8 @@ reek lib`.
 ## Contributing
 
 All contributions are welcome - just make a pull request, making sure you include tests
-and write a good, informative commit message/pull request body.
+and documentation for any public methods, and write a good, informative commit
+message/pull request body.
 
 Check out
 [CODE_OF_CONDUCT.md](https://github.com/timrogers/starling-ruby/blob/master/CODE_OF_CONDUCT.md)
