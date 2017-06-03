@@ -2,6 +2,7 @@ module Starling
   module Services
     # A service for accessing the Direct Debit Mandates API
     class DirectDebitMandatesService < BaseService
+      # @param id [String] The Starling internal ID of the Direct Debit mandate
       # @param params [Hash] Parameters which will be included in the HTTP request,
       #                      included in the URL as a query string
       # @param headers [Hash] Headers which be included in the HTTP request, merged on
