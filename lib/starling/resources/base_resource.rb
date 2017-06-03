@@ -8,7 +8,13 @@ module Starling
     # API
     class BaseResource
       # A resource can be instantiated with either a Faraday::Response (including a
-      # #body), or with a Hash pre-parsed from JSON
+      # #body), or with a Hash pre-parsed from JSON.
+      #
+      # An alternative possible approach to our resources would be to parse out the
+      # attributes we care about at initialisation, and then just add `attr_reader`s,
+      # rather than looking into the parsed JSON hash. The current solution is probably
+      # preferable, since it defers delving into the hash until a parameter is actually
+      # wanted, and keeps instance variables to a minimum.
       #
       # @param response [Faraday::Response] The complete HTTP response, returned by
       #                                     {Request#make_request}
