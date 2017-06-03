@@ -1,0 +1,15 @@
+{
+  "id": "b7f69386-860f-49b6-9e9d-97b46fefb658",
+  "currency": "GBP",
+  "amount": -15.9,
+  "direction": "OUTBOUND",
+  "created": "2017-05-19T06:28:05.158Z",
+  "narrative": "2184EMPH000604",
+  "source": "FASTER_PAYMENTS_OUT",
+  "receivingContactId": "7eb7c22e-9a3d-4c25-b4ec-d75a115656ff",
+  "receivingContactAccountId": "7eb7c22e-9a3d-4c25-b4ec-d75a115656ff",
+  "receivingContactAccount": {
+    "href": "api/v1/contacts/7eb7c22e-9a3d-4c25-b4ec-d75a115656ff/accounts/7eb7c22e-9a3d-4c25-b4ec-d75a115656ff",
+    "templated": false
+  }
+}

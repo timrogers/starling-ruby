@@ -20,3 +20,8 @@ ControlParameter:
   exclude:
     # This looks like a false positive to me! `parsed_data` doesn't control the method.
     - "Starling::Resources::BaseResource#initialize"
+
+TooManyMethods:
+  exclude:
+    # Starling::Client has to have lots of methods, since it has one for each service
+    - "Starling::Client"

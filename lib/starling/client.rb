@@ -144,6 +144,21 @@ module Starling
       Services::InboundFasterPaymentsTransactionsService.new(@api_service)
     end
 
+    # Provides access to the Transaction Faster Payment Out API
+    #
+    # @return [Starling::Services::OutboundFasterPaymentsTransactionsService] a
+    #                                                                         configured
+    #                                                                         service for
+    #                                                                         accessing
+    #                                                                         the
+    #                                                                         Transaction
+    #                                                                         Faster
+    #                                                                         Payment Out
+    #                                                                         API
+    def outbound_faster_payments_transactions
+      Services::OutboundFasterPaymentsTransactionsService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)
