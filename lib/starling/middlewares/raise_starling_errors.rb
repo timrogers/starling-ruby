@@ -1,5 +1,8 @@
 module Starling
   module Middlewares
+    # A Faradfay::Response::Middleware used to raise an {{Errors::ApiError}} when the
+    # Starling Bank API responds with an HTTP status code indicating an error. The raised
+    # error provides access to the response.
     class RaiseStarlingErrors < Faraday::Response::Middleware
       # HTTP status codes which are considered to be an error (alongside non-JSON)
       # responses
@@ -11,15 +14,8 @@ module Starling
       # @return [nil] if the response from the Starling Bank API doesn't indicate an
       #               error
       def on_complete(env)
-        return unless !json?(env) && ERROR_STATUSES.include?(env.status)
+        return unless ERROR_STATUSES.include?(env.status)
         raise Errors::ApiError, env
-      end
-
-      private
-
-      def json?(env)
-        env.response_headers.fetch('Content-Type', '')
-           .include?('application/json')
       end
     end
   end

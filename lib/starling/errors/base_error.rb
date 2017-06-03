@@ -2,6 +2,9 @@ require 'json'
 
 module Starling
   module Errors
+    # A basic implementation of an error thrown from a {Faraday::Response::Middleware},
+    # receiving the Faraday environment as an argument, providing access to the response
+    # status and body
     class BaseError < StandardError
       extend Forwardable
 

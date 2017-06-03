@@ -2,6 +2,7 @@ require 'json'
 
 module Starling
   module Errors
+    # An error raised when the Starling Bank API responds in a way indicating an error
     class ApiError < BaseError
       # @return [String] a helpful message explaining the error, incorporating the
       #                  HTTP status code and the error message (either parsed from the
@@ -13,6 +14,7 @@ module Starling
 
         "#{status}: #{error_description} (#{error})"
       end
+      alias to_s message
 
       # @return [String] the error name returned by the Starling Bank API
       def error
