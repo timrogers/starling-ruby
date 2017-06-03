@@ -159,6 +159,16 @@ module Starling
       Services::OutboundFasterPaymentsTransactionsService.new(@api_service)
     end
 
+    # Provides access to the Transaction Direct Debit API
+    #
+    # @return [Starling::Services::DirectDebitTransactionsService] a configured service
+    #                                                              for accessing the
+    #                                                              Transaction Direct
+    #                                                              Debit API
+    def direct_debit_transactions
+      Services::DirectDebitTransactionsService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

@@ -1,0 +1,42 @@
+
+{
+  "_links": {
+    "nextPage": {
+      "href": "NOT_YET_IMPLEMENTED"
+    }
+  },
+  "_embedded": {
+    "transactions": [
+      {
+        "id": "7b659a8d-b2a8-4815-9d61-afeb97d4e4b9",
+        "currency": "GBP",
+        "amount": -982.21,
+        "direction": "OUTBOUND",
+        "created": "2017-05-31T23:30:00.000Z",
+        "narrative": "RENDALL AND RITTNER",
+        "source": "DIRECT_DEBIT",
+        "mandateId": "b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c",
+        "mandate": {
+          "href": "/api/v1/direct-debit/mandates/b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c",
+          "templated": false
+        },
+        "type": "FIRST_PAYMENT_OF_DIRECT_DEBIT"
+      },
+      {
+        "id": "33a2a7d3-9932-4c66-a5cd-a6e0faa6298f",
+        "currency": "GBP",
+        "amount": -55,
+        "direction": "OUTBOUND",
+        "created": "2017-05-31T23:30:00.000Z",
+        "narrative": "RENDALL AND RITTNER",
+        "source": "DIRECT_DEBIT",
+        "mandateId": "b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c",
+        "mandate": {
+          "href": "/api/v1/direct-debit/mandates/b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c",
+          "templated": false
+        },
+        "type": "DIRECT_DEBIT"
+      }
+    ]
+  }
+}

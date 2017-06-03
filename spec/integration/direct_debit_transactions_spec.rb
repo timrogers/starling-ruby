@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe Starling::Services::InboundFasterPaymentsTransactionsService do
+RSpec.describe Starling::Services::DirectDebitTransactionsService do
   let(:client) { Starling::Client.new(access_token: 'dummy_access_token') }
-  subject(:service) { client.inbound_faster_payments_transactions }
+  subject(:service) { client.direct_debit_transactions }
 
   before { stub_user_agent }
 
@@ -10,12 +10,13 @@ RSpec.describe Starling::Services::InboundFasterPaymentsTransactionsService do
     subject(:transactions) { service.list }
 
     let(:status) { 200 }
-    let(:body) { load_fixture('inbound_faster_payments_transactions.json') }
+    let(:body) { load_fixture('direct_Debit_transactions.json') }
     let(:headers) { { 'Content-Type' => 'application/json' } }
 
     context 'with no filters' do
       before do
-        stub_request(:get, 'https://api.starlingbank.com/api/v1/transactions/fps/in')
+        stub_request(:get,
+                     'https://api.starlingbank.com/api/v1/transactions/direct-debit')
           .with(headers: {
                   'Accept' => 'application/json',
                   'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -29,27 +30,25 @@ RSpec.describe Starling::Services::InboundFasterPaymentsTransactionsService do
 
       its(:length) { is_expected.to eq(2) }
 
-      it 'correctly builds an array of Inbound Faster Payments Transaction resources',
+      it 'correctly constructs an array of Direct Debit Transaction resources',
          :aggregate_failures do
-        expect(transactions.first.created).to eq(Time.parse('2017-05-31T23:54:40.915Z'))
-        expect(transactions.first.id).to eq('29a05688-f8a0-49f8-9148-b52a087ee360')
+        expect(transactions.first.id).to eq('7b659a8d-b2a8-4815-9d61-afeb97d4e4b9')
         expect(transactions.first.currency).to eq('GBP')
-        expect(transactions.first.amount).to eq(492)
-        expect(transactions.first.direction).to eq(:inbound)
-        expect(transactions.first.narrative).to eq('sw8 deposit')
-        expect(transactions.first.source).to eq(:faster_payments_in)
-        expect(transactions.first.sending_contact_id)
-          .to eq('ae46414c-7cc4-44f6-8be3-d6a2296f5700')
-        expect(transactions.first.sending_contact_account_id)
-          .to eq('ae46414c-7cc4-44f6-8be3-d6a2296f5700')
+        expect(transactions.first.amount).to eq(-982.21)
+        expect(transactions.first.direction).to eq(:outbound)
+        expect(transactions.first.narrative).to eq('RENDALL AND RITTNER')
+        expect(transactions.first.source).to eq(:direct_debit)
+        expect(transactions.first.mandate_id)
+          .to eq('b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c')
+        expect(transactions.first.type).to eq(:first_payment_of_direct_debit)
       end
     end
 
     context 'filtering by date' do
       let!(:stub) do
         stub_request(:get,
-                     'https://api.starlingbank.com/api/v1/transactions/fps/in?from=' \
-                     '2017-05-30')
+                     'https://api.starlingbank.com/api/v1/transactions/direct-debit?' \
+                     'from=2017-05-30')
           .with(headers: {
                   'Accept' => 'application/json',
                   'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -71,10 +70,11 @@ RSpec.describe Starling::Services::InboundFasterPaymentsTransactionsService do
   describe '#get' do
     subject(:transaction) { service.get(id) }
 
-    let(:id) { '29a05688-f8a0-49f8-9148-b52a087ee360' }
+    let(:id) { '7b659a8d-b2a8-4815-9d61-afeb97d4e4b9' }
 
     before do
-      stub_request(:get, "https://api.starlingbank.com/api/v1/transactions/fps/in/#{id}")
+      stub_request(:get,
+                   "https://api.starlingbank.com/api/v1/transactions/direct-debit/#{id}")
         .with(headers: {
                 'Accept' => 'application/json',
                 'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -88,27 +88,25 @@ RSpec.describe Starling::Services::InboundFasterPaymentsTransactionsService do
 
     context 'with a valid ID' do
       let(:status) { 200 }
-      let(:body) { load_fixture('inbound_faster_payments_transaction.json') }
+      let(:body) { load_fixture('direct_debit_transaction.json') }
       let(:headers) { { 'Content-Type' => 'application/json' } }
 
       it do
         is_expected
-          .to be_a(Starling::Resources::InboundFasterPaymentsTransactionResource)
+          .to be_a(Starling::Resources::DirectDebitTransactionResource)
       end
 
-      it 'correctly constructs a Inbound Faster Payments Transaction resources',
+      it 'correctly constructs a Direct Debit Transaction resources',
          :aggregate_failures do
-        expect(transaction.created).to eq(Time.parse('2017-05-31T23:54:40.915Z'))
-        expect(transaction.id).to eq('29a05688-f8a0-49f8-9148-b52a087ee360')
+        expect(transaction.id).to eq('7b659a8d-b2a8-4815-9d61-afeb97d4e4b9')
         expect(transaction.currency).to eq('GBP')
-        expect(transaction.amount).to eq(492)
-        expect(transaction.direction).to eq(:inbound)
-        expect(transaction.narrative).to eq('sw8 deposit')
-        expect(transaction.source).to eq(:faster_payments_in)
-        expect(transaction.sending_contact_id)
-          .to eq('ae46414c-7cc4-44f6-8be3-d6a2296f5700')
-        expect(transaction.sending_contact_account_id)
-          .to eq('ae46414c-7cc4-44f6-8be3-d6a2296f5700')
+        expect(transaction.amount).to eq(-982.21)
+        expect(transaction.direction).to eq(:outbound)
+        expect(transaction.narrative).to eq('RENDALL AND RITTNER')
+        expect(transaction.source).to eq(:direct_debit)
+        expect(transaction.mandate_id)
+          .to eq('b0fe77e9-7ad1-47a5-ac83-3adf5eb34f4c')
+        expect(transaction.type).to eq(:first_payment_of_direct_debit)
       end
     end
 
