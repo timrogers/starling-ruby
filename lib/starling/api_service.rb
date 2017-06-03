@@ -5,19 +5,15 @@ module Starling
     DEFAULT_ADAPTER = :net_http
     BASE_PATH = '/api/v1'.freeze
 
-    def initialize(base_url, options = {})
-      @access_token = options.fetch(:access_token)
-
-      http_adapter = options[:http_adapter] || [DEFAULT_ADAPTER]
-      connection_options = options[:connection_options]
-
+    def initialize(base_url, access_token:, http_adapter: [DEFAULT_ADAPTER],
+                   connection_options: {}, default_headers: {})
       @connection = Faraday.new(base_url, connection_options) do |faraday|
         faraday.response(:raise_starling_errors)
         faraday.adapter(*http_adapter)
       end
 
-      user_provided_default_headers = options.fetch(:default_headers, {})
-      @headers = default_headers.merge(user_provided_default_headers)
+      @headers = library_default_headers(access_token: access_token)
+                 .merge(default_headers)
     end
 
     def make_request(method, path, options = {})
@@ -34,9 +30,9 @@ module Starling
       "#{BASE_PATH}#{path}"
     end
 
-    def default_headers
+    def library_default_headers(access_token:)
       {
-        'Authorization' => "Bearer #{@access_token}",
+        'Authorization' => "Bearer #{access_token}",
         'Accept' => 'application/json',
         'User-Agent' => user_agent
       }

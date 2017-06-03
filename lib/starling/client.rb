@@ -7,13 +7,12 @@ module Starling
       sandbox: 'https://api-sandbox.starlingbank.com'
     }.freeze
 
-    def initialize(options = {})
-      raise ArgumentError, 'access_token must be provided' unless options[:access_token]
-
-      environment = options.delete(:environment) { :production }
-
+    def initialize(access_token:, environment: :production, default_headers: {},
+                   connection_options: {})
       @api_service = ApiService.new(fetch_base_url_for_environment(environment),
-                                    options)
+                                    access_token: access_token,
+                                    default_headers: default_headers,
+                                    connection_options: connection_options)
     end
 
     def account

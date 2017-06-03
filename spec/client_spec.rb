@@ -4,7 +4,12 @@ RSpec.describe Starling::Client do
   FakeResponse = Value.new(:status, :headers, :body)
 
   subject(:client) { described_class.new(options) }
-  let(:options) { { access_token: 'dummy_access_token', custom_options: { x: 'y' } } }
+  let(:options) do
+    {
+      access_token: 'dummy_access_token',
+      connection_options: { request: { timeout: 5 } }
+    }
+  end
 
   its(:account) { is_expected.to be_a(Starling::Services::AccountService) }
 
@@ -36,7 +41,10 @@ RSpec.describe Starling::Client do
 
   it 'instantiates an ApiService, defaulting to production' do
     expect(Starling::ApiService).to receive(:new)
-      .with('https://api.starlingbank.com', options)
+      .with('https://api.starlingbank.com',
+            default_headers: {},
+            access_token: options[:access_token],
+            connection_options: options[:connection_options])
 
     client
   end
@@ -46,7 +54,10 @@ RSpec.describe Starling::Client do
 
     it 'instantiates an ApiService' do
       expect(Starling::ApiService).to receive(:new)
-        .with('https://api-sandbox.starlingbank.com', options)
+        .with('https://api-sandbox.starlingbank.com',
+              default_headers: {},
+              access_token: options[:access_token],
+              connection_options: options[:connection_options])
 
       client
     end
