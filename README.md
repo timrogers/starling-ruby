@@ -1,6 +1,9 @@
 # Starling Ruby Library
 
-The Starling Ruby library provides a simple, idiomatic interface to the [Starling Bank API](https://developer.starlingbank.com).
+The Starling Ruby library provides a simple, idiomatic interface to the
+[Starling Bank API](https://developer.starlingbank.com) compatible with Ruby 2.4, Ruby
+2.3 and Ruby 2.2. JRuby is also generally supported, but is currently not tested due to
+CI limitations.
 
 [![CircleCI](https://circleci.com/gh/timrogers/starling-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/timrogers/starling-ruby/tree/master)
 [![Gem Version](https://badge.fury.io/rb/starling-ruby.svg)](https://badge.fury.io/rb/starling-ruby)
@@ -40,7 +43,8 @@ Now you've initialised a `Starling::Client` with your access token, you can star
 requests to the API. 
 
 All APIs are supported except "Get Photo" under the Contact API (it doesn't seem to
-actually be possible to set a photo...) and the Payment APIs for creating an immediate or scheduled payment (which are not supported for personal access tokens).
+actually be possible to set a photo...) and the Payment APIs for creating an immediate or
+scheduled payment (which are not supported for personal access tokens).
 
 See below for a few simple examples, or head to our
 [full documentation](http://www.rubydoc.info/github/timrogers/starling-ruby/master) for
@@ -102,7 +106,8 @@ in `lib/starling/services`) which have methods calling out to the API.
 
 Philosophically, these services represent "kinds of things" (i.e. resources) returned by 
 or manipulated by the API. __These do not necessarily match up with the APIs listed in
-Starling's [documentation](https://developer.starlingbank.com/docs), which is grouped slightly differently__. 
+Starling's [documentation](https://developer.starlingbank.com/docs), which is grouped
+slightly differently__. 
 
 The benefit is that we can have a small, predictable set of methods in our
 services exposing API endpoints: `#get`, `#list`, `#create` and `#delete`. 
@@ -140,25 +145,15 @@ API stabilises. Any such changes will be flagged in the changelog.
 
 ## Tests
 
-The recommended way to run tests on the project is using CircleCI's local Docker
-testing - this is the best way to make sure that what passes tests locally in development
-will work when you push it and it runs through our automated CI.
+The library must pass code checks by RSpec, Rubocop and Reek:
 
-```bash
-# Download the circleci binary (assuming /usr/local/bin is in your PATH)
-curl -o /usr/local/bin/circleci \
-https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci
+* `bundle exec rspec spec`: checks the library against automated tests we've written
+* `bundle exec rubocop`: checks the code against established Ruby code style
+* `bundle exec reek lib`: checks the code for "code smells"
 
-chmod +x /usr/local/bin/circleci
-
-# Run the full CI process, including tests, Rubocop and Reek. You'll need Docker
-# installed.
-circleci build
-```
-
-You can also run tests in your own environment by running `bundle exec rake`, can
-run Rubocop by running `bundle exec rubocop` and can run Reek by running `bundle exec
-reek lib`.
+As part of our continuous integration (CI) process, we run RSpec, Rubocop and Reek in
+CircleCI on Ruby 2.4, Ruby 2.3 and Ruby 2.2. Feel free to push up your branch and open
+a pull request to have Circle test your code.
 
 ## Contributing
 
