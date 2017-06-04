@@ -4,22 +4,22 @@ module Starling
     class AccountBalanceResource < BaseResource
       # @return [Float] the account's accepted overdraft
       def accepted_overdraft
-        parsed_data['acceptedOverdraft']
+        present_float(parsed_data['acceptedOverdraft'])
       end
 
       # @return [Float] the account's balance
       def amount
-        parsed_data['amount']
+        present_float(parsed_data['amount'])
       end
 
       # @return [Float] the account's amount available to spend
       def available_to_spend
-        parsed_data['availableToSpend']
+        present_float(parsed_data['availableToSpend'])
       end
 
       # @return [Float] the account's cleared balance
       def cleared_balance
-        parsed_data['clearedBalance']
+        present_float(parsed_data['clearedBalance'])
       end
 
       # @return [String] the account's currency (e.g. "GBP")
@@ -29,12 +29,12 @@ module Starling
 
       # @return [Float] the account's effective balance
       def effective_balance
-        parsed_data['effectiveBalance']
+        present_float(parsed_data['effectiveBalance'])
       end
 
       # @return [Float] the total of the account's pending transactions
       def pending_transactions
-        parsed_data['pendingTransactions']
+        present_float(parsed_data['pendingTransactions'])
       end
     end
   end

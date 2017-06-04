@@ -14,7 +14,7 @@ module Starling
 
       # @return [Float] the amount of the transaction
       def amount
-        parsed_data['amount']
+        present_float(parsed_data['amount'])
       end
 
       # @return [Symbol] the direction of the transaction (e.g. `:outbound`)
