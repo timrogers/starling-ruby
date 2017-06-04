@@ -10,10 +10,20 @@ The Starling Ruby library provides a simple, idiomatic interface to the [Starlin
 Install the gem by adding it to your Gemfile, and then run `bundle`:
 
 ```ruby
-gem 'starling-ruby', '~> 0.1.0', require: 'starling'
+gem 'starling-ruby', '~> 0.2.0', require: 'starling'
 ```
 
-You can now initialise the client, providing an access token, an optionally an
+You'll need to get a personal access token for your Starling account. To get set up,
+head to the Starling Developers 
+["Get Started" page](https://developer.starlingbank.com/get-started) and then scroll
+down to the "Personal Access" section for instructions.
+
+At the moment, the library is not designed to
+support OAuth applications (it can't handle refreshing access tokens) or endpoints
+requiring the [`pay-local:create` scope](https://developer.starlingbank.com/tiers),
+which is not granted to personal access tokens.
+
+You can now initialise the client, providing your access token, and optionally an
 environment (either `:sandbox` or `:production`, defaulting to :production):
 
 ```ruby
