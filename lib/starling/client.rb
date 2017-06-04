@@ -177,6 +177,16 @@ module Starling
       Services::PaymentsService.new(@api_service)
     end
 
+    # Provides access to the Transaction Mastercard API
+    #
+    # @return [Starling::Services::MastercardTransactionsService] a configured service
+    #                                                             for accessing the
+    #                                                             Transaction Mastercard
+    #                                                             API
+    def mastercard_transactions
+      Services::MastercardTransactionsService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

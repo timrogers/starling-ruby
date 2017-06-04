@@ -1,0 +1,25 @@
+{
+  "_links": {
+    "merchant": {
+      "href": "/api/v1/merchants/0a51eab9-5e6b-4572-b9f4-80bbf91f8fbf",
+      "templated": false
+    },
+    "merchantLocation": {
+      "href": "/api/v1/merchants/0a51eab9-5e6b-4572-b9f4-80bbf91f8fbf/locations/9fcc6444-9c1d-404c-8f8f-02910a04a102",
+      "templated": false
+    }
+  },
+  "id": "3b29c081-e824-4db3-ade4-9deffbd839a2",
+  "currency": "GBP",
+  "amount": -1.5,
+  "direction": "OUTBOUND",
+  "created": "2017-05-31T17:48:02.253Z",
+  "narrative": "TFL Travel Charge",
+  "source": "MASTER_CARD",
+  "mastercardTransactionMethod": "CONTACTLESS",
+  "status": "SETTLED",
+  "sourceAmount": 1.5,
+  "sourceCurrency": "GBP",
+  "merchantId": "0a51eab9-5e6b-4572-b9f4-80bbf91f8fbf",
+  "merchantLocationId": "9fcc6444-9c1d-404c-8f8f-02910a04a102"
+}

@@ -49,6 +49,10 @@ RSpec.describe Starling::Client do
 
   its(:payments) { is_expected.to be_a(Starling::Services::PaymentsService) }
 
+  its(:mastercard_transactions) do
+    is_expected.to be_a(Starling::Services::MastercardTransactionsService)
+  end
+
   it 'instantiates an ApiService, defaulting to production' do
     expect(Starling::ApiService).to receive(:new)
       .with('https://api.starlingbank.com',
