@@ -99,6 +99,13 @@ puts "This location for #{merchant_location.merchant_name} is called " \
      "#{merchant_location.location_name}"
 ```
 
+## Examples
+
+Here, we'll keep a list of applications using the library for reference and inspiration:
+
+* __[Starling Terminal](https://github.com/timrogers/starling-terminal)__ - a tool that
+lets you view your Starling Bank statement right from your terminal
+
 ## Philosophy
 
 Once you've initialised a `Starling::Client`, it exposes a number of services (living
