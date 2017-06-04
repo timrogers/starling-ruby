@@ -169,6 +169,14 @@ module Starling
       Services::DirectDebitTransactionsService.new(@api_service)
     end
 
+    # Provides access to the Payment API
+    #
+    # @return [Starling::Services::PaymentsService] a configured service for accessing
+    #                                               the Payment API
+    def payments
+      Services::PaymentsService.new(@api_service)
+    end
+
     private
 
     def fetch_base_url_for_environment(environment)

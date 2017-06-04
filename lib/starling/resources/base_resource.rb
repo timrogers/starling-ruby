@@ -43,6 +43,14 @@ module Starling
         Date.parse(string)
       end
 
+      # Many fields returned in the API (e.g. transaction amounts) can be either integers
+      # or more complex values with decimal places. The JSON parser will turn these into
+      # Integer (Fixnum in Ruby versions before 2.4) and Float objects respectively. For
+      # consistency, we will convert anything that *could* be a Float into a Float.
+      def present_float(number)
+        Float(number)
+      end
+
       # Some strings returned by the API are specified as Enum types, with a specified
       # set of possible values. These are best represented in Ruby as symbols (e.g.
       # the Transaction API's `source` can have the value MASTER_CARD, which will become

@@ -1,0 +1,68 @@
+{
+  "_links": {
+    "nextPage": {
+      "href": "NOT_YET_IMPLEMENTED"
+    }
+  },
+  "_embedded": {
+    "paymentOrders": [
+      {
+        "_links": {
+          "mandate": {
+            "href": "/api/v1/direct-debit/mandates/null",
+            "templated": false
+          },
+          "receivingContactAccount": {
+            "href": "api/v1/contacts/null",
+            "templated": false
+          }
+        },
+        "paymentOrderId": "820cf8ee-1ed2-460e-b05a-b16db1d81624",
+        "currency": "GBP",
+        "amount": 1520,
+        "reference": "QQT65230L",
+        "receivingContactAccountId": "7b433266-ff08-4d0d-b4be-a5e9fb08f55a",
+        "recipientName": null,
+        "immediate": false,
+        "recurrenceRule": {
+          "startDate": "2017-06-09",
+          "frequency": "MONTHLY",
+          "interval": 1,
+          "count": null,
+          "untilDate": null,
+          "weekStart": null,
+          "days": [],
+          "monthDay": 9,
+          "monthWeek": null
+        },
+        "startDate": "2017-06-09",
+        "nextDate": "2017-06-09",
+        "cancelledAt": "2017-05-28T17:53:49.066Z",
+        "paymentType": "STANDING_ORDER"
+      },
+      {
+        "_links": {
+          "mandate": {
+            "href": "/api/v1/direct-debit/mandates/null",
+            "templated": false
+          },
+          "receivingContactAccount": {
+            "href": "api/v1/contacts/null",
+            "templated": false
+          }
+        },
+        "paymentOrderId": "f27b0534-9c7b-4870-9a37-09534c15ecf4",
+        "currency": "GBP",
+        "amount": 15.9,
+        "reference": "2184EMPH000604",
+        "receivingContactAccountId": "7eb7c22e-9a3d-4c25-b4ec-d75a115656ff",
+        "recipientName": null,
+        "immediate": true,
+        "startDate": "2017-05-19",
+        "nextDate": "2017-05-19",
+        "endDate": "2017-05-19",
+        "paymentType": "STANDING_ORDER"
+      }
+    ]
+  }
+}
