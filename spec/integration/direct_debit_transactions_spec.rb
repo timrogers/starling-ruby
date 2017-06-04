@@ -10,7 +10,7 @@ RSpec.describe Starling::Services::DirectDebitTransactionsService do
     subject(:transactions) { service.list }
 
     let(:status) { 200 }
-    let(:body) { load_fixture('direct_Debit_transactions.json') }
+    let(:body) { load_fixture('direct_debit_transactions.json') }
     let(:headers) { { 'Content-Type' => 'application/json' } }
 
     context 'with no filters' do
