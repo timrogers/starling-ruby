@@ -1,6 +1,8 @@
 # Starling Ruby Library
 
-The Starling Ruby library provides a simple, idiomatic interface to the [Starling Bank API](https://developer.starlingbank.com).
+The Starling Ruby library provides a simple, idiomatic interface to the
+[Starling Bank API](https://developer.starlingbank.com) compatible with Ruby 2.4, Ruby
+2.3 and Ruby 2.2.
 
 [![CircleCI](https://circleci.com/gh/timrogers/starling-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/timrogers/starling-ruby/tree/master)
 [![Gem Version](https://badge.fury.io/rb/starling-ruby.svg)](https://badge.fury.io/rb/starling-ruby)
@@ -40,7 +42,8 @@ Now you've initialised a `Starling::Client` with your access token, you can star
 requests to the API. 
 
 All APIs are supported except "Get Photo" under the Contact API (it doesn't seem to
-actually be possible to set a photo...) and the Payment APIs for creating an immediate or scheduled payment (which are not supported for personal access tokens).
+actually be possible to set a photo...) and the Payment APIs for creating an immediate or
+scheduled payment (which are not supported for personal access tokens).
 
 See below for a few simple examples, or head to our
 [full documentation](http://www.rubydoc.info/github/timrogers/starling-ruby/master) for
@@ -102,7 +105,8 @@ in `lib/starling/services`) which have methods calling out to the API.
 
 Philosophically, these services represent "kinds of things" (i.e. resources) returned by 
 or manipulated by the API. __These do not necessarily match up with the APIs listed in
-Starling's [documentation](https://developer.starlingbank.com/docs), which is grouped slightly differently__. 
+Starling's [documentation](https://developer.starlingbank.com/docs), which is grouped
+slightly differently__. 
 
 The benefit is that we can have a small, predictable set of methods in our
 services exposing API endpoints: `#get`, `#list`, `#create` and `#delete`. 
