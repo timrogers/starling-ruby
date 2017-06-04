@@ -20,7 +20,7 @@ module Starling
 
       # @return [Symbol] the direction of the transaction (e.g. `:outbound`)
       def direction
-        symbolize_enum_string(parsed_data['direction'])
+        present_enum(parsed_data['direction'])
       end
 
       # @return [Time] the date and time when the transaction was recorded
@@ -36,7 +36,7 @@ module Starling
 
       # @return [Symbol] the source of the transaction (e.g. `:master_card`)
       def source
-        symbolize_enum_string(parsed_data['source'])
+        present_enum(parsed_data['source'])
       end
 
       # @return [String] the Starling internal ID of the Direct Debit mandate
@@ -47,7 +47,7 @@ module Starling
       # @return [Symbol] the type of the transaction
       #                  (e.g. `:first_payment_of_direct_debit` or `:direct_debit`)
       def type
-        symbolize_enum_string(parsed_data['type'])
+        present_enum(parsed_data['type'])
       end
     end
   end

@@ -14,7 +14,7 @@ module Starling
 
       # @return [Symbol] the type of the contact account (e.g. `:domestic`)
       def type
-        symbolize_enum_string(parsed_data['type'])
+        present_enum(parsed_data['type'])
       end
 
       # @return [String] the account number of the contact account

@@ -15,12 +15,12 @@ module Starling
 
       # @return [Symbol] the status of the mandate (e.g. `:live`)
       def status
-        symbolize_enum_string(parsed_data['status'])
+        present_enum(parsed_data['status'])
       end
 
       # @return [Symbol] the source of the mandate (e.g. `:electronic` or `paper)
       def source
-        symbolize_enum_string(parsed_data['source'])
+        present_enum(parsed_data['source'])
       end
 
       # @return [Time] the date when the mandate was created

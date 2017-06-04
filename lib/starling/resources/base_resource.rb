@@ -55,7 +55,7 @@ module Starling
       # set of possible values. These are best represented in Ruby as symbols (e.g.
       # the Transaction API's `source` can have the value MASTER_CARD, which will become
       # :master_card.
-      def symbolize_enum_string(enum_string)
+      def present_enum(enum_string)
         enum_string.downcase.to_sym
       end
     end

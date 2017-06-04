@@ -71,7 +71,7 @@ module Starling
       # @return [Symbol] the type of the payment (e.g. `:standing_order`) (these values
       #                  do not seem to be accurate!)
       def payment_type
-        symbolize_enum_string(parsed_data['paymentType'])
+        present_enum(parsed_data['paymentType'])
       end
     end
   end
