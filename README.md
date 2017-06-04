@@ -2,7 +2,8 @@
 
 The Starling Ruby library provides a simple, idiomatic interface to the
 [Starling Bank API](https://developer.starlingbank.com) compatible with Ruby 2.4, Ruby
-2.3 and Ruby 2.2.
+2.3 and Ruby 2.2. JRuby is also generally supported, but is currently not tested due to
+CI limitations.
 
 [![CircleCI](https://circleci.com/gh/timrogers/starling-ruby/tree/master.svg?style=svg)](https://circleci.com/gh/timrogers/starling-ruby/tree/master)
 [![Gem Version](https://badge.fury.io/rb/starling-ruby.svg)](https://badge.fury.io/rb/starling-ruby)
