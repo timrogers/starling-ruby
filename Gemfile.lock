@@ -51,7 +51,7 @@ GEM
     rainbow (2.2.2)
       rake
     rake (10.5.0)
-    reek (4.7.2)
+    reek (4.7.3)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
       rainbow (~> 2.0)
