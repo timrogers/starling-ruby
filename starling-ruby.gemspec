@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'faraday', ['>= 0.8.9', '< 0.10']
+  spec.add_dependency 'faraday', '>= 0.8.9', '< 0.14'
 
   spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'rake', '~> 10.0'
