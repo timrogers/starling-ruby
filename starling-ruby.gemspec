@@ -30,6 +30,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pry', '~> 0.11.3'
   spec.add_development_dependency 'values', '~> 1.8.0'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.3.0'
-  spec.add_development_dependency 'yard', '~> 0.8.7.6'
+  spec.add_development_dependency 'yard', '~> 0.9.10'
   spec.add_development_dependency 'reek', '~> 4.7.0'
 end
