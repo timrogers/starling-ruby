@@ -27,6 +27,7 @@ GEM
     equalizer (0.0.11)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
+    ffi (1.9.18)
     ffi (1.9.18-java)
     hashdiff (0.3.4)
     ice_nine (0.11.2)
@@ -46,7 +47,7 @@ GEM
     public_suffix (2.0.5)
     rainbow (2.2.2)
       rake
-    rake (10.5.0)
+    rake (12.3.0)
     reek (4.7.3)
       codeclimate-engine-rb (~> 0.4.0)
       parser (>= 2.4.0.0, < 2.5)
@@ -102,7 +103,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.14)
   pry (~> 0.11.3)
-  rake (~> 10.0)
+  rake (~> 12.3)
   reek (~> 4.7.0)
   rspec (~> 3.0)
   rspec-its (~> 1.2.0)
