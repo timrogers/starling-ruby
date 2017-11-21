@@ -12,7 +12,7 @@ jobs:
         key: starling-{{ checksum "Gemfile.lock" }}
 
       # Update bundler
-      - run: gem install bundler
+      - run: gem install bundler --pre
 
       # Bundle install dependencies
       - run: bundle install --path vendor/bundle

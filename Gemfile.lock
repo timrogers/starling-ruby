@@ -27,7 +27,6 @@ GEM
     equalizer (0.0.11)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
-    ffi (1.9.18)
     ffi (1.9.18-java)
     hashdiff (0.3.7)
     ice_nine (0.11.2)
@@ -115,4 +114,4 @@ DEPENDENCIES
   yard (~> 0.9.10)
 
 BUNDLED WITH
-   1.15.1
+   1.16.0.pre.3
