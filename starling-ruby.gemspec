@@ -28,6 +28,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.3.0'
   spec.add_development_dependency 'rubocop', '~> 0.52.0'
   spec.add_development_dependency 'values', '~> 1.8.0'
-  spec.add_development_dependency 'webmock', '~> 3.1.1'
+  spec.add_development_dependency 'webmock', '~> 3.2.0'
   spec.add_development_dependency 'yard', '~> 0.9.10'
 end
