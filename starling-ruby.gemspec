@@ -1,4 +1,4 @@
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'starling/version'
 
@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_dependency 'faraday', '>= 0.8.9', '< 0.15'
 
@@ -26,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-its', '~> 1.2.0'
   spec.add_development_dependency 'rspec_junit_formatter', '~> 0.3.0'
-  spec.add_development_dependency 'rubocop', '~> 0.52.0'
+  spec.add_development_dependency 'rubocop', '~> 0.53.0'
   spec.add_development_dependency 'values', '~> 1.8.0'
   spec.add_development_dependency 'webmock', '~> 3.3.0'
   spec.add_development_dependency 'yard', '~> 0.9.10'
