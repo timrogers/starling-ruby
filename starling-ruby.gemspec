@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
     f.match(%r{^(test|spec|features)/})
   end
   spec.require_paths = ['lib']
+  spec.required_ruby_version = '>= 2.2.0'
 
   spec.add_dependency 'faraday', '>= 0.8.9', '< 0.15'
 
