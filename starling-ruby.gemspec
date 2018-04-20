@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = '>= 2.2.0'
 
-  spec.add_dependency 'faraday', '>= 0.8.9', '< 0.15'
+  spec.add_dependency 'faraday', '>= 0.8.9', '< 0.16'
 
   spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'pry', '~> 0.11.3'
